@@ -47,7 +47,7 @@ class Client(object):
       payload["pause"] = pause
 
     r = requests.put(url, json=payload, timeout = 30)
-    return r.ok
+    return r.json()
 
   def put_settings(self, sensors, actuators, auth_token, endpoint):
     ''' Sync settings to the Konnected device '''

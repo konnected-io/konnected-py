@@ -14,7 +14,7 @@ except ImportError:
 
 license = """
 MIT License
-Copyright (c) 2017 Konnected Inc
+Copyright (c) 2018 Konnected Inc
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -34,12 +34,13 @@ SOFTWARE.
 """
 
 setup(
-    name='konnected-py',
-    version='0.1',
-    packages=['konnected',],
+    name='konnected',
+    version='0.1.1',
+    packages=['konnected'],
     url='https://github.com/konnected-io/konnected-py',
     license=license,
-    description='A Python library for interacting with Konnected home automation devices (see https://konnected.io)',
+    description='A Python library for interacting with Konnected home automation controllers (see https://konnected.io)',
+    long_description='View details and usage examples in the `README.md<https://github.com/konnected-io/konnected-py> on GitHub`_. For device support see `help.konnected.io<https://help.konnected.io>`_',
     author='Nate Clark, Konnected Inc',
     author_email='help@konnected.io',
     install_requires=['requests>=2.0']

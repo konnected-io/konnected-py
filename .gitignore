@@ -1,2 +1,5 @@
 *.pyc
 /konnected/__pycache__/
+/build/
+/dist/
+/konnected.egg-info/
