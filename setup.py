@@ -33,15 +33,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+long_description = """
+View details and usage examples in the `README.md <https://github.com/konnected-io/konnected-py> on GitHub`_.
+For device support see `help.konnected.io <https://help.konnected.io>`_.
+"""
+
 setup(
     name='konnected',
-    version='0.1.1',
+    version='0.1.2',
     packages=['konnected'],
     url='https://github.com/konnected-io/konnected-py',
     license=license,
     description='A Python library for interacting with Konnected home automation controllers (see https://konnected.io)',
-    long_description='View details and usage examples in the `README.md<https://github.com/konnected-io/konnected-py> on GitHub`_. For device support see `help.konnected.io<https://help.konnected.io>`_',
+    long_description=long_description,
     author='Nate Clark, Konnected Inc',
     author_email='help@konnected.io',
-    install_requires=['requests>=2.0']
+    install_requires=['requests>=2.0'],
+    project_urls={
+      'Homepage': 'https://github.com/konnected-io/konnected-py',
+      'Website & Online Store': 'https://konnected.io',
+      'Help, Support and Community Forums': 'https://help.konnected.io',
+      'Facebook': 'https://facebook.com/konnected.io/',
+      'YouTube Channel': 'https://youtube.com/c/Konnected'
+    }
 )
