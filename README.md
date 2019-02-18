@@ -20,7 +20,7 @@ For more information see [konnected.io](https://konnected.io)
 
 # Sync settings to the device
 
->>> k.put_settings([{"pin":1}],[],'secureToken','http://example.com')
+>>> k.put_settings(sensors=[{"pin":1}], actuators=[], auth_token='secureToken', endpoint='http://example.com')
 True
 
 # Get status of each input pin

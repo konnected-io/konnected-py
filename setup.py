@@ -40,7 +40,7 @@ For device support see `help.konnected.io <https://help.konnected.io>`_.
 
 setup(
     name='konnected',
-    version='0.1.4',
+    version='0.1.5',
     packages=['konnected'],
     url='https://github.com/konnected-io/konnected-py',
     license=license,
