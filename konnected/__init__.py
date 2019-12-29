@@ -21,7 +21,7 @@ class Client(object):
         try:
             async with self.websession.get(url, params={'pin': pin}, timeout=10) as resp:
                 return await resp.json()
-        except aiohttp.ClientError as err:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as err:
             raise Client.ClientError(err)
 
     async def get_status(self):
@@ -30,7 +30,7 @@ class Client(object):
         try:
             async with self.websession.get(url, timeout=10) as resp:
                 return await resp.json()
-        except aiohttp.ClientError as err:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as err:
             raise Client.ClientError(err)
 
     async def put_device(self, pin, state, momentary=None, times=None, pause=None):
@@ -54,7 +54,7 @@ class Client(object):
         try:
             async with self.websession.put(url, json=payload, timeout=10) as resp:
                 return await resp.json()
-        except aiohttp.ClientError as err:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as err:
             raise Client.ClientError(err)
 
     async def put_settings(self, sensors=[], actuators=[], auth_token=None,
@@ -80,8 +80,8 @@ class Client(object):
 
         try:
             async with self.websession.put(url, json=payload, timeout=10) as resp:
-                return await resp.json()
-        except aiohttp.ClientError as err:
+                return (resp.status >= 200 and resp.status < 300)
+        except (aiohttp.ClientError, asyncio.TimeoutError) as err:
             raise Client.ClientError(err)
 
     class ClientError(Exception):
