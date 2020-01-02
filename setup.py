@@ -40,15 +40,15 @@ For device support see `help.konnected.io <https://help.konnected.io>`_.
 
 setup(
     name='konnected',
-    version='0.1.5',
+    version='1.0.0',
     packages=['konnected'],
     url='https://github.com/konnected-io/konnected-py',
     license=license,
-    description='A Python library for interacting with Konnected home automation controllers (see https://konnected.io)',
+    description='A async Python library for interacting with Konnected home automation controllers (see https://konnected.io)',
     long_description=long_description,
     author='Nate Clark, Konnected Inc',
     author_email='help@konnected.io',
-    install_requires=['requests>=2.0'],
+    install_requires=['aiohttp>=3.6.1'],
     project_urls={
       'Homepage': 'https://github.com/konnected-io/konnected-py',
       'Website & Online Store': 'https://konnected.io',
