@@ -43,6 +43,21 @@ async def main():
         print(await k.put_device(pin=8, state=1))
         # {'state': 1, 'pin': 8}
 
+        # Get status of each input zone
+
+        print(await k.get_zone())  
+        # [{'state': 0, 'zone': 1}, {'state': 1, 'zone': 2}]
+
+        # Get status of a single input zone
+
+        print(await k.get_zone(2))
+        # [{'state': 1, 'zone': 2}]
+
+        # Actuate an output zone
+
+        print(await k.put_zone(zone=8, state=1))
+        # {'state': 1, 'zone': 8}
+
         # Get device status
 
         await k.get_status()
