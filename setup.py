@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='konnected',
-    version='1.1.0',
+    version='1.2.0',
     packages=['konnected'],
     url='https://github.com/konnected-io/konnected-py',
     description='A async Python library for interacting with Konnected home automation controllers (see https://konnected.io)',
