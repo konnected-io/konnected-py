@@ -8,6 +8,7 @@ setup(
     packages=['konnected'],
     url='https://github.com/konnected-io/konnected-py',
     description='A async Python library for interacting with Konnected home automation controllers (see https://konnected.io)',
+    license='MIT',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='Nate Clark, Konnected Inc',
