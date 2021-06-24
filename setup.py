@@ -12,7 +12,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Nate Clark, Konnected Inc',
     author_email='help@konnected.io',
-    install_requires=['aiohttp>=3.6.1'],
+    install_requires=['aiohttp>=3.7.4,<4'],
     classifiers=[
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
