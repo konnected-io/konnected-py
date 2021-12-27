@@ -9,13 +9,16 @@ __author__ = "Nate Clark, Konnected Inc <help@konnected.io>"
 class Client:
     """API wrapper for Konnected Alarm Panels."""
 
-    def __init__(self, host, port, websession):
+    def __init__(self, host, port, websession, use_ssl=False):
         """Initialize the client connection."""
         self.throttle = asyncio.Semaphore(3)  # allow for 3 simultaneous reqs
         self.host = host
         self.port = port
         self.websession = websession
-        self.base_url = "http://" + host + ":" + port
+        if use_ssl:
+            self.base_url = "https://" + host + ":" + port
+        else:
+            self.base_url = "http://" + host + ":" + port
 
     async def get_status(self, retries=2):
         """Query the device status."""
@@ -126,6 +129,7 @@ class Client:
         endpoint=None,
         blink=None,
         discovery=None,
+        use_ssl=None,
         dht_sensors=[],
         ds18b20_sensors=[],
         retries=2,
@@ -148,6 +152,9 @@ class Client:
         if discovery is not None:
             payload["discovery"] = discovery
 
+        if use_ssl is not None:
+            payload["use_ssl"] = use_ssl
+
         try:
             async with self.throttle:
                 async with self.websession.put(url, json=payload, timeout=3) as resp:
@@ -161,6 +168,7 @@ class Client:
                     endpoint,
                     blink,
                     discovery,
+                    use_ssl,
                     dht_sensors,
                     ds18b20_sensors,
                     retries - 1,
